@@ -82,6 +82,8 @@ mcview_eof=
 ignore_ftp_chattr_errors=true
 skin=dark
 
+editor_state_full_filename=1
+
 [Layout]
 message_visible=1
 keybar_visible=1
@@ -132,6 +134,8 @@ permission_mode=false
 torben_fj_mode=false
 quick_search_mode=2
 select_flags=6
+
+panel_scroll_center=false
 
 [Panelize]
 Find *.orig after patching=find . -name \\*.orig -print
