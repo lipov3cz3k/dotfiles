@@ -1,6 +1,6 @@
 [user]
-	name = $DEBFULLNAME
-	email = $DEBMAIL
+	name = Tomáš Lipovský
+	email = tomas.lipovsky@firma.seznam.cz
 
 [core]
         editor = vim
