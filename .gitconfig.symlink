@@ -45,5 +45,7 @@
         dump = cat-file -p
         ignored = ls-files --exclude-standard --ignored --others
         authors = "!git log --pretty=format:%aN | sort | uniq -c | sort -rn"
+        branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%ai %ar by %an\" $branch | head -n 1` \t$branch; done | sort -r"
+
 [push]
 	default = simple
