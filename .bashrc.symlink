@@ -47,7 +47,13 @@ export CYAN='\e[01;36m'
 export PROMPTCOL=$NC
 export DIRCOL=$BLUE
 
-PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[$PROMPTCOL\]\u@\h\[$NC\]:\[$DIRCOL\]\w\[$NC\]" "\\\$ "'
+export KUBE_PS1_SYMBOL_ENABLE='false'
+export KUBE_PS1_NS_ENABLE='false'
+
+PROMPT_COMMAND='__git_ps1 "${debian_chroot:+($debian_chroot)}\[$PROMPTCOL\]\u@\h\[$NC\]$(__kube_ps1):\[$DIRCOL\]\w\[$NC\]" "\\\$ "'
+
+# Load kube prompt script.
+source ~/.dotfiles/tools/kube-ps1.sh
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

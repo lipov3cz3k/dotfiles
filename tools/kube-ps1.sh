@@ -328,7 +328,7 @@ kubeoff() {
 }
 
 # Build our prompt
-kube_ps1() {
+__kube_ps1() {
   [[ "${KUBE_PS1_ENABLED}" == "off" ]] && return
   [[ -z "${KUBE_PS1_CONTEXT}" ]] && [[ "${KUBE_PS1_CONTEXT_ENABLE}" == true ]] && return
 
