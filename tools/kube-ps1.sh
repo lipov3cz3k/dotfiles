@@ -34,8 +34,10 @@ KUBE_PS1_DIVIDER="${KUBE_PS1_DIVIDER-:}"
 KUBE_PS1_SUFFIX="${KUBE_PS1_SUFFIX-)}"
 KUBE_PS1_SYMBOL_COLOR="${KUBE_PS1_SYMBOL_COLOR-blue}"
 KUBE_PS1_CTX_COLOR="${KUBE_PS1_CTX_COLOR-red}"
+KUBE_PS1_CTX_COLOR_DEFAULT="${KUBE_PS1_CTX_COLOR}"
 KUBE_PS1_NS_COLOR="${KUBE_PS1_NS_COLOR-cyan}"
 KUBE_PS1_BG_COLOR="${KUBE_PS1_BG_COLOR}"
+KUBE_PS1_BG_COLOR_DEFAULT="${KUBE_PS1_BG_COLOR}"
 KUBE_PS1_KUBECONFIG_CACHE="${KUBECONFIG}"
 KUBE_PS1_DISABLE_PATH="${HOME}/.kube/kube-ps1/disabled"
 KUBE_PS1_LAST_TIME=0
@@ -269,6 +271,15 @@ _kube_ps1_get_context_ns() {
   _kube_ps1_get_ns
 }
 
+_kube_ps1_set_ctx_color() {
+  case "${1}" in
+    *"dev"*) KUBE_PS1_BG_COLOR=$KUBE_PS1_BG_COLOR_DEFAULT; KUBE_PS1_CTX_COLOR=green;;
+    *"staging"*) KUBE_PS1_BG_COLOR=$KUBE_PS1_BG_COLOR_DEFAULT; KUBE_PS1_CTX_COLOR=red;;
+    *"stable"*) KUBE_PS1_BG_COLOR=red; KUBE_PS1_CTX_COLOR=white;;
+    *) KUBE_PS1_BG_COLOR=$KUBE_PS1_BG_COLOR_DEFAULT; KUBE_PS1_CTX_COLOR=$KUBE_PS1_CTX_COLOR_DEFAULT;;
+  esac
+}
+
 # Set kube-ps1 shell defaults
 _kube_ps1_init
 
@@ -334,6 +345,9 @@ __kube_ps1() {
 
   local KUBE_PS1
   local KUBE_PS1_RESET_COLOR="${_KUBE_PS1_OPEN_ESC}${_KUBE_PS1_DEFAULT_FG}${_KUBE_PS1_CLOSE_ESC}"
+
+  # Rewrite colors for critical ctx
+  _kube_ps1_set_ctx_color ${KUBE_PS1_CONTEXT}
 
   # Background Color
   [[ -n "${KUBE_PS1_BG_COLOR}" ]] && KUBE_PS1+="$(_kube_ps1_color_bg ${KUBE_PS1_BG_COLOR})"
