@@ -73,3 +73,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Load kube completion script
+source <(kubectl completion bash)
