@@ -12,6 +12,7 @@
 # alias cp='cp -i'
  alias mv='mv -i'
 
+ alias scurl='~/.dotfiles/tools/scurl.sh'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
