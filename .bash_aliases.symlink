@@ -12,7 +12,8 @@
 # alias cp='cp -i'
  alias mv='mv -i'
 
- alias scurl='~/.dotfiles/tools/scurl.sh'
+alias scurl='~/.dotfiles/tools/scurl.sh'
+alias repopush='scp debian/pkg/*deb repo:jessie-testing'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
