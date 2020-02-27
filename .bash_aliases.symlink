@@ -8,12 +8,12 @@
  alias l='ls $LS_OPTIONS -lA'
 
 # Some more alias to avoid making mistakes:
- alias rm='rm -i'
+alias rm='rm -i'
 # alias cp='cp -i'
- alias mv='mv -i'
+alias mv='mv -i'
 
 alias scurl='~/.dotfiles/tools/scurl.sh'
-alias repopush='scp debian/pkg/*deb repo:jessie-testing'
+alias repopush='scp debian/pkg/*deb repo:$DEBIAN_CODENAME-testing'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

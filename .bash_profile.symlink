@@ -8,8 +8,6 @@ if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null ; then
     PATH=$PATH:"/mnt/c/Program Files/Microsoft VS Code"
     alias code="Code.exe"
     alias winvlc='/mnt/c/Program\ Files\ \(x86\)/VideoLAN/VLC/vlc.exe'
-else
-    alias code="rmate"
 fi
 
 alias lipos='ssh lipos -A'
@@ -19,6 +17,8 @@ alias lipob='ssh lipob -A'
 alias bal='rm -f debian/pkg/* && szn-buildpackage -nccu'
 
 export SELECTED_EDITOR="/usr/bin/vim.basic"
+
+DEBIAN_CODENAME=`cat /etc/os-release | grep "VERSION=" | sed -r 's/^.*\((.*)\)"/\1/g'`
 
 DEBEMAIL="tomas.lipovsky@firma.seznam.cz"
 DEBFULLNAME="Tomáš Lipovský"
