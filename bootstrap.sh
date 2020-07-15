@@ -5,7 +5,8 @@ root_dotfiles=( ".bashrc"
                 ".bash_aliases"
                 # ".bash_logout"
                 ".inputrc"
-                ".gitconfig")
+                ".gitconfig"
+                ".tmux.conf")
 
 for file in "${root_dotfiles[@]}"
 do
