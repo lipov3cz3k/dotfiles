@@ -19,7 +19,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias klogin='~/.scripts/kube-dex-login_kube-dex-login.sh --user $USER'
+alias klogin='kube-dex-login --user $USER'
 alias k=kubectl
 complete -F __start_kubectl k
 
