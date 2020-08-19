@@ -20,6 +20,10 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias klogin='kube-dex-login --user $USER'
+alias kdev.ko='kubectl config use-context cdn-dev.ko'
+alias ktest.ko='kubectl config use-context cdn-test.ko'
+alias kstable.ko='kubectl config use-context cdn-stable.ko'
+alias kstable.ng='kubectl config use-context cdn-stable.ng'
 alias k=kubectl
 complete -F __start_kubectl k
 
