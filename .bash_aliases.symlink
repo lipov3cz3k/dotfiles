@@ -19,7 +19,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias klogin='kube-dex-login --user $USER'
+alias klogin='kube-login -p'
 alias kdev.ko='kubectl config use-context cdn-dev.ko'
 alias ksdev.ko='kubectl config use-context cdn-sdev.ko'
 alias ktest.ko='kubectl config use-context cdn-test.ko'
