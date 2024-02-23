@@ -1,0 +1,51 @@
+[user]
+	name = Lipovsky, Tomas
+	email = tomas.lipovsky@firma.seznam.cz
+
+[core]
+        editor = vim
+        autocrlf = input
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+[alias]
+        s = status
+        b = branch
+        bv = branch -vv
+        ba = branch -a
+        bav = branch -a -vv
+        co = checkout
+        cod = checkout -- *
+        clf = clean -f
+        a = add
+        ap = add -p
+        d = diff
+        da = diff HEAD
+        ds = diff --staged
+        c = commit
+        cv = commit -v
+        ca = commit --amend
+        can = commit --amend --no-edit
+        sh = show
+        shi = show --ignore-space-change
+        l = log --graph --branches --remotes --tags --pretty='format:%C(yellow)%h %C(green)%ai %C(bold blue)%an %C(red)%d%C(reset) %s' -30
+        ll = log --graph --branches --remotes --tags --pretty='format:%C(yellow)%h %C(green)%ai %C(bold blue)%an %C(red)%d%C(reset) %s'
+        la = log --graph --branches --remotes --tags --pretty='format:%C(yellow)%h %C(green)%ai %C(bold blue)%an %C(red)%d%C(reset) %s' --all
+        lp = log --graph --branches --remotes --tags --pretty='format:%C(yellow)%h %C(green)%ai %C(bold blue)%an %C(red)%d%C(reset) %s' --patch
+        lg = log --oneline --decorate --all --graph
+        st = stash
+        stl = stash list
+        stp = stash pop
+        stc = stash clear
+        shs = stash show -p
+        up = pull --rebase
+        type = cat-file -t
+        dump = cat-file -p
+        ignored = ls-files --exclude-standard --ignored --others
+        authors = "!git log --pretty=format:%aN | sort | uniq -c | sort -rn"
+        branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%ai %ar by %an\" $branch | head -n 1` \t$branch; done | sort -r"
+
+[push]
+	default = simple
