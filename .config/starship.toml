@@ -1,0 +1,45 @@
+[username]
+format = '[$user]($style)@'
+
+[hostname]
+ssh_only = false
+ssh_symbol = ""
+style = 'bold yellow'
+format = '[$ssh_symbol$hostname]($style) '
+
+[directory]
+truncation_length = 6
+truncation_symbol = "…/"
+style = "blue bold"
+# truncate_to_repo = false
+
+[git_branch]
+# symbol = " "
+style = "bold green"
+format = '\[[$symbol$branch(:$remote_branch)]($style)\]'
+
+[git_status]
+format = '\[[$all_status$ahead_behind]($style)\]'
+style = "bold green"
+ahead = "+${count}"
+diverged = "⇕+${ahead_count}-${behind_count}"
+behind = "-${count}"
+modified = "*"
+# conflicted = "🏳 "
+# up_to_date = " "
+# untracked = " "
+# stashed = " "
+# staged = '[++\($count\)](green)'
+# renamed = "襁 "
+# deleted = " "
+
+[kubernetes]
+format = '\([$symbol$context( \($namespace\))]($style)\) '
+disabled = false
+symbol = ""
+style = "bold purple"
+
+[[kubernetes.contexts]]
+context_pattern = ".*stable.*"
+style = "bold red"
+
